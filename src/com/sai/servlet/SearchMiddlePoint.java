@@ -76,19 +76,13 @@ public class SearchMiddlePoint implements Action {
 			e.printStackTrace();
 		}
 //---2 무게중심구하기
-		if (mCenterPoint != null) 
-			System.out.println("mCenterPoint != null");
+		if (mCenterPoint != null) System.out.println("mCenterPoint != null");
 
-		double centerX = 0.0, centerY = 0.0;
-		double area = 0.0;
+		double centerX = 0.0, centerY = 0.0, area = 0.0, factor = 0.0;
 
 		mCenterPoint = new Point2D.Double(0.0, 0.0);
 		int firstIndex, secondIndex, sizeOfVertexs = mVertexs.size();
-
-		Point2D.Double  firstPoint;
-		Point2D.Double  secondPoint;
-
-		double factor = 0.0;
+		Point2D.Double  firstPoint, secondPoint;
 
 		for (firstIndex = 0; firstIndex < sizeOfVertexs; firstIndex++) {
 			secondIndex = (firstIndex + 1) % sizeOfVertexs;
@@ -116,7 +110,7 @@ public class SearchMiddlePoint implements Action {
 		System.out.println("#---centerXY : " + mCenterPoint.toString());
 		System.out.print("#----area : " + area);
 		
-//---4 TM좌표 변황 --무게중심점 
+//---4 TM좌표 변환 --무게중심점 
 		wgsX = mCenterPoint.getX();
 		wgsY = mCenterPoint.getY();
 

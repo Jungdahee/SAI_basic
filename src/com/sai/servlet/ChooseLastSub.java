@@ -47,8 +47,7 @@ public class ChooseLastSub {
 					document.getDocumentElement().normalize();
 
 					NodeList shortList = document.getElementsByTagName("row");
-
-//Q이거 질문					
+				
 					for(int k = 0; k < shortList.getLength(); k++){
 						Node nNode = shortList.item(k);
 						System.out.println("nNode.getNodeType() : " + nNode.getNodeType());
@@ -71,40 +70,39 @@ public class ChooseLastSub {
 				sevTime[j] = time;
 			}
 
-			//�� ���� ���� �щ�� 紐��� 珥� ������媛��� �몄�� ��濡� ���� 寃곌낵(=��洹�)
+			//역마다의 평균 시간 계산
 			avg = totalTime[i] / SearchMiddlePoint.friends.size();
 			System.out.println("��洹� ���� ��媛��� : " + avg);
 
-			sum = 0; //珥�湲고��
+			sum = 0; 
 			for(int l = 0; l < SearchMiddlePoint.friends.size(); l++) {
 				sum += Math.pow(sevTime[l] - avg, 2.0);
 			}
 			
-			//遺��� 援ы���� ��
+			//표준 편차를 구하기 위한 계산
 			var = sum / SearchMiddlePoint.friends.size();
 
-			//��以� �몄감 援ы���� ��
+			//표준 편차 계산
 			std = Math.sqrt(var);
 			totalSd[i] = std;
 			
 			System.out.println("��以� �몄�� : " + std);
 			
-			//���� 留ㅺ린湲� ���� ��以� �몄감 + 珥� ���� ��媛�
+			//역마다의 표준 편차와 총 소요시간 계산 -> 공평성을 위한 변수들
 			total[i] = totalSd[i] + totalTime[i];
 			
-			//留ㅽ���� ���� hashMap �ъ��
 			result.put(total[i], SearchTenSub.statName[i]);
 		}	
 		
-		//�ㅻ�李⑥���쇰� ����
+		//표준 편차와 소요시간을 더한 값 오름차순으로 정렬
 		Arrays.sort(total);
 		
-		//媛��� 泥ル�吏� �몃�깆�ㅼ�� 寃곌낵媛��� 理����대��濡� 理�醫���
+		//정렬 후 가장 짧은 시간 선택
 		lastSub = (String)result.get(total[0]);
 		System.out.println(lastSub);
 		System.out.println("理�醫� 異�泥���: " + result.get(total[0]));
 		
-		//理�醫��� 諛���
+		//중간지점 반환
 		return lastSub;
 	}
 }

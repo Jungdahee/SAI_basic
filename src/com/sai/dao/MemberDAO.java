@@ -22,7 +22,7 @@ public class MemberDAO {
       try {
          Class.forName("com.mysql.jdbc.Driver");
          System.out.println("\n ***MemberDAO ---Class.forName(\"com.mysql.jdbc.Driver\"); 에러 없음 ");
-         conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/hanium_prac?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC", "root", "qkqh3635^^");   
+         conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/hanium_prac?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC", "root", "1102");   
 
       }catch(Exception e) {
          e.printStackTrace();

@@ -22,7 +22,7 @@ public class MakePathToJson {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			System.out.println("���쇱�대� 寃��� OK");
-			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/hanium_prac?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC", "root", "tndkmj89!!");				
+			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/hanium_prac?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC", "root", "1102");   				
 
 			for(int i = 0; i < sub.length; i++) {
 				JSONObject res = new JSONObject();
