@@ -1,0 +1,10 @@
+eclipse.preferences.version=1
+encoding//src/com/sai/dao/MemberDAO.java=UTF-8
+encoding//src/com/sai/servlet/ChooseLastSub.java=UTF-8
+encoding//src/com/sai/servlet/JoinMember.java=UTF-8
+encoding//src/com/sai/servlet/LoadFriendsToMap.java=UTF-8
+encoding//src/com/sai/servlet/LoginMember.java=UTF-8
+encoding//src/com/sai/servlet/MakePathToJson.java=UTF-8
+encoding//src/com/sai/servlet/SearchLastSubPath.java=UTF-8
+encoding//src/com/sai/servlet/SearchMiddlePoint.java=UTF-8
+encoding//src/com/sai/servlet/SearchTenSub.java=UTF-8
