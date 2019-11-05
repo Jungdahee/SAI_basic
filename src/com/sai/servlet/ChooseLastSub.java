@@ -102,7 +102,7 @@ public class ChooseLastSub {
 		System.out.println(lastSub);
 		System.out.println("理�醫� 異�泥���: " + result.get(total[0]));
 		
-		//중간지점 반환
+		//중간지점 반환(String)
 		return lastSub;
 	}
 }
