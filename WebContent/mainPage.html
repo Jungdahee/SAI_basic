@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="generator" content="2017.1.0.379" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name='viewport'
+          content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.mapbox.com/mapbox.js/v3.1.1/mapbox.js'></script>
+    <link href='https://api.mapbox.com/mapbox.js/v3.1.1/mapbox.css' rel='stylesheet' />
+    
+    	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+
+	<script src="http://code.jquery.com/jquery-migrate-1.1.0.min.js"></script>
+    <!-- js -->
+
+    <style src = "https://api.mapbox.com/styles/v1/mapbox/dark-v9.html?fresh=true&title=true&access_token=pk.eyJ1Ijoic3VhbWoiLCJhIjoiY2ptc203cWl0MGM1dDNwbnVwemdjZTFnbyJ9.v4QFpeaIi88xAl73QkEBUg#0.0/0.000000/0.000000/0"></style>
+
+    <!--  <script src="jquery-3.3.1.js"></script>-->
+
+    <style>
+
+  body { margin:0; padding:0;  }
+  #map { position: relative; height:auto; width:auto;}
+
+  pre.ui-distance {
+  position:absolute;
+
+  top:90px;
+  right:35%;
+
+  padding:5px 10px;
+  background:rgba(0,0,0,0);
+  color:pink;
+  font-size:15px;
+  line-height:18px;
+  border-radius:3px;
+  }
+  pre{
+  position:absolute;
+
+  top:65px;
+  right:35%;
+
+  padding:5px 10px;
+  background:rgba(0,0,0,0);
+  color:pink;
+  font-size:13px;
+  line-height:18px;
+  border-radius:3px;
+  }
+
+</style>
+
+    <title>mainPage</title>
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="css.css"/>
+    <link rel="stylesheet" type="text/css" href="css/site_global.css?crc=444006867" />
+    <link rel="stylesheet" type="text/css" href="css/master_full.css?crc=94902987" />
+    <link rel="stylesheet" type="text/css" href="css/_.css?crc=66686160" id="pagesheet" />
+
+
+</head>
+<body>
+<div id='map'></div>
+<div class="box1">
+    <table>
+        <tr>
+            <th>
+                <a href='myPage.html'><img src="images/profile.png" width="40" height="40" /></a>
+            </th>
+            <th>
+                <a href='mainPage.html'><img src="images/44-crop-u5812.png" width="80" height="40" /></a>
+            </th>
+            <th>
+                <a href='hotPlace.html'><img src="images/zz-crop-u5808.png" width="40" height="40" /></a>
+            </th>
+        </tr>
+    </table>
+</div>
+    <div class="fix1">
+        <br>
+        <form id="search1" class="example" action="action_page.php">
+            <input type="text" placeholder="subway OR friend " name="search">
+        </form>
+        <!--button type="button" id="search1" class="example" onclick="location.href='addLocation.html'">+역추가</button-->
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class=></div>
+    <pre>from MyHOME to POint</pre>
+    <pre id='distance' class='ui-distance'>click for distance</pre>
+
+    <div id="station" class = "stack2" style="color:skyblue"> </div>
+
+    <input type = "text" class="inputStation" id="virtualStation" name="search" placeholder="INPUT VIRTUAL STATION..."/>
+    <input type="hidden" id="hid">
+    <button type="button" id="addStation" class="fix00">+Add</button>
+
+    <div align="center"><button class="but" style="position: absolute; bottom:10px;"  id="middlePoint" >search middle point</button></div>
+    <script type="text/javascript" src="mainPage.js"></script>
+
+
+</body>
+</html>

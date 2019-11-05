@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html class="nojs html css_verticalspacer" lang="ko-KR">
+<head>
+
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
+    <meta name="generator" content="2017.1.0.379"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <script type="text/javascript">
+   // Update the 'nojs'/'js' class on the html node
+document.documentElement.className = document.documentElement.className.replace(/\bnojs\b/g, 'js');
+
+// Check that all required assets are uploaded and up-to-date
+if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required":["museutils.js", "museconfig.js", "jquery.musepolyfill.bgsize.js", "jquery.watch.js", "require.js", "_.css"], "outOfDate":[]};
+</script>
+
+    <title>bestPlaceFilter</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="css.css"/>
+    <link rel="stylesheet" type="text/css" href="css/site_global.css?crc=444006867"/>
+    <link rel="stylesheet" type="text/css" href="css/master_full.css?crc=94902987"/>
+    <link rel="stylesheet" type="text/css" href="css/_.css?crc=66686160" id="pagesheet"/>
+    <style>
+ button {
+    background-color: #343332;
+    border: solid 1px #ffffff;
+
+    padding: 10px 13px;
+    text-align: center;
+    color: #ffffff;
+    font-size: 16px;
+}
+  </style>
+</head>
+<body>
+
+
+
+
+<table>
+    <tr>
+        <th>
+            <a href='myPage.html'><img src="images/profile.png" width="40" height="40" /></a>
+        </th>
+        <th>
+            <a href='middlePointCafe.html'><img src="images/44-crop-u5812.png" width="80" height="40" /></a>
+        </th>
+        <th>
+            <a href='hotPlace.html'><img src="images/zz-crop-u5808.png" width="40" height="40" /></a>
+        </th>
+    </tr>
+</table>
+
+<h5>Heap Place Category</h5>
+<br>
+
+<form action="filteredHotPlace.html" method="get">
+
+	<h3>HotPlace Category</h3>
+	
+	<table style="width:100%">
+	<tr>
+		<td><input type="checkbox" name="filter" value="12">관광지</td>
+		<td><input type="checkbox" name="filter" value="14">문화시설</td>
+		<td><input type="checkbox" name="filter" value="15">축제/공연</td>
+	</tr>	
+	
+	<tr>
+		<td><input type="checkbox" name="filter" value="28">레포츠</td>
+		<td><input type="checkbox" name="filter" value="38">쇼핑</td>
+		<td><input type="checkbox" name="filter" value="39">음식</td>
+	</table>
+	
+	<h3>Local Category</h3>
+	<table style="width:100%">
+	<tr>
+		<td><input type="checkbox" name="local" value="1">서울</td>
+		<td><input type="checkbox" name="local" value="2">인천</td>
+		<td><input type="checkbox" name="local" value="3">대전</td>
+	</tr>
+	
+	<tr>
+		<td><input type="checkbox" name="local" value="4">대구</td>
+		<td><input type="checkbox" name="local" value="5">광주</td>
+		<td><input type="checkbox" name="local" value="6">부산</td>
+	</tr>
+	
+	<tr>	
+		<td><input type="checkbox" name="local" value="7">울산</td>
+		<td><input type="checkbox" name="local" value="8">세종특별자치시</td>
+		<td><input type="checkbox" name="local" value="31">경기도</td>
+	</tr>
+	
+	<tr>
+		<td><input type="checkbox" name="local" value="32">강원도</td>
+		<td><input type="checkbox" name="local" value="33">충청북도</td>
+		<td><input type="checkbox" name="local" value="34">충청남도</td>
+	</tr>
+	
+	<tr>
+		<td><input type="checkbox" name="local" value="35">경상북도</td>
+		<td><input type="checkbox" name="local" value="36">경상남도</td>
+		<td><input type="checkbox" name="local" value="38">전라남도</td>
+	</tr>
+	
+	<tr>
+		<td><input type="checkbox" name="local" value="39">제주도</td>
+	</tr>
+		
+	</table> 
+	
+	<br>
+	<br>
+	<input type="submit" class="but" value="적용하기"/>
+</form>
+
+</body>
+</html>

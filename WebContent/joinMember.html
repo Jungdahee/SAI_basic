@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="css.css"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="generator" content="2017.1.0.379" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name='viewport'
+		  content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+	<script src='https://api.mapbox.com/mapbox.js/v3.1.1/mapbox.js'></script>
+	<link href='https://api.mapbox.com/mapbox.js/v3.1.1/mapbox.css' rel='stylesheet' />
+	<!-- js -->
+
+	<script src="jquery-3.3.1.js"></script>
+
+	<title>Insert title here</title>
+</head>
+
+<script>
+   $(document).ready(function(){
+      $("#btnCheckId").click(function(){
+         if($("#memberId").val() == "")
+            alert("아이디를 입력해주세요.");
+         else {
+            $.ajax({
+               url: "./CheckMemberId.do",
+               type: "post",
+               data: {
+                  "checkId" : $("#memberId").val()
+               },
+               datatype: "json",
+               success : function(data){
+                  alert("success");
+                  var result = JSON.parse(data);
+                  alert(result.status);
+                  if(result.status == "true"){
+                     $("#Idmsg").text("사용 가능한 아이디입니다.");
+                  }
+
+                  else
+                     $("#Idmsg").text("사용 불가능한 아이디입니다.");
+                   }
+
+                });
+
+         }
+      })
+
+      $("#btnCheckPw").keyup(function(){
+         if($("#memberPw").val() != $("#btnCheckPw").val()){
+            $("#Pwmsg").text("동일한 PASSWORD가 아닙니다.");
+         }
+         else
+            $("#Pwmsg").text("동일한 PASSWORD입니다.");
+      })
+
+   });
+
+</script>
+
+<body>
+<!-- PHOTO: <input type="text" id="memberPhoto" name="memberPhoto"> -->
+<div class="fix0_1t">
+	<form id="search3" class="search-input" action="LoginMember.do" method="POST">
+
+		<a href='PHOTO'><img src="images/photo.png" width="80" height="80"/></a>
+
+		<br>
+		<br>
+		<br>
+		<input type="text" name="memberId" placeholder="ID" id="search2">
+
+		<br>
+		<input type="button" id="btnCheckId" value="중복 확인" style="padding-left: 180px">
+		<div id="Idmsg" style="color: red;"></div>
+
+		<br>
+		<input type="password" name="memberPw" placeholder="PASSWORD" id="search7">
+		<br>
+		<br>
+		<br>
+		<input type="password" name="memberPw" placeholder="PASSWORD CHECK" class="search7">
+		<div id="Pwmsg" style="color: red;"></div>
+		<br>
+		<br>
+		<input type="text" name="memberPw" placeholder="NAME" id="search2">
+		<br>
+		<br>
+		<br>
+		<input type="text" name="memberPw" placeholder="PHONE" id="search2">
+		<br>
+		<br>
+		<br>
+		<input type="text" name="memberPw" placeholder="STATION" id="search2">
+		<br>
+		<br>
+
+		<input class="but" type="submit" value="회원가입">
+
+
+	</form>
+</div>
+
+
+
+</body>
+</html>

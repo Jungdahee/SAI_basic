@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html class="nojs html css_verticalspacer" lang="ko-KR">
+<head>
+
+	<meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+	<meta name="generator" content="2017.1.0.379" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+
+    <script src="http://code.jquery.com/jquery-migrate-1.1.0.min.js"></script>
+
+	<script type="text/javascript">
+   // Update the 'nojs'/'js' class on the html node
+document.documentElement.className = document.documentElement.className.replace(/\bnojs\b/g, 'js');
+
+// Check that all required assets are uploaded and up-to-date
+if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required":["museutils.js", "museconfig.js", "jquery.musepolyfill.bgsize.js", "jquery.watch.js", "require.js", "_.css"], "outOfDate":[]};
+</script>
+
+	<title>MY LIKE</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+		  rel="stylesheet">
+	<!-- CSS -->
+	<link rel="stylesheet" type="text/css" href="css.css" />
+	<link rel="stylesheet" type="text/css"
+		  href="css/site_global.css?crc=444006867" />
+	<link rel="stylesheet" type="text/css"
+		  href="css/master_full.css?crc=94902987" />
+	<link rel="stylesheet" type="text/css" href="css/_.css?crc=66686160"
+		  id="pagesheet" />
+</head>
+<body>
+
+<script>
+ $(document).ready(function() {
+	 alert("라이크 페이지");
+		$.ajax({
+			url: "./LoadMyLikePlace.do",
+			type: "post",
+			datatype: "json",
+			success: function(data){
+				alert("success");
+				alert(Object.keys(data).length);
+				for(var i = 0; i < Object.keys(data).length; i++){
+				//alert(JSON.stringify(data));
+				var result = JSON.parse(data);
+
+				var data1 = "<br><br><div class='info' id='" + i + "'>" +
+				"<img id='add_firstImage1' width='300px' height='300px' src='" + result[i].firstImage + "'/>" +
+				"<input type='hidden' id='add_contentId' value='" + result[i].contentId + "'</input>" +
+				"<input type='hidden' id='add_contentTypeId' value='" + result[i].contentTypeId + "'>" + "</input>" +
+				"<input type='hidden' id='add_areaCode' value='" + result[i].areaCode + "'>" + "</input>" +
+				"<input type='hidden' id='add_firstImage2' value='" + result[i].firstImage + "'>" + "</input>" +
+				"<p id='add_title'>" + result[i].title + "</p>" +
+				"<p type='text' id='add_readCount'>조회수 : " + result[i].readCount + "</p>" +
+			    "<p type='text' id='add_addr1'>" + result[i].addr1+ "</p>" +
+	             "<input type='hidden' id='add_addr2' value='" + result[i].addr2 + "'>" + "</input>" +
+	      
+	               "<p type='text' id='add_tel'>" + result[i].tel + "</p>" +
+	               "<input type='hidden' id='add_mapX' value='" + result[i].mapX + "'>" + "</input>" +
+					"<input type='hidden' id='add_mapY' value='" + result[i].mapY + "'>" + "</input>" +
+				"<button id='likeBtn' value='좋아요'><img id='myImage' src='images/heart1.png' width:'50px'/></button></div>";
+
+				var html = $.parseHTML(data1);
+
+				$("#div").append(html);
+
+				}
+			}
+
+		});
+		
+		$(document).on('click', '#likeBtn', function() {
+			var likeBtn = $(this);
+			
+			var parent = $(likeBtn).parent();
+			var contentId = $(parent).children('#add_contentId').val();
+
+			/* var obj = new Object();
+
+			obj.contentId = contentId;
+				
+			//데이터 직렬화
+			var data = JSON.stringify(obj); */
+
+			$.ajax({
+					url: "./DeleteLikePlace.do",
+					type: "post",
+					dataType: "json",
+					data: {"data" : contentId},
+					success: function(data){
+						alert("좋아요가 취소되었습니다.");
+						location.href = "myPrefer.html";
+					}
+					
+			}) 
+		})
+
+ });
+
+ </script>
+
+<table>
+	<tr>
+		<th>
+			<a href='myPage.html'><img src="images/profile.png" width="40" height="40" /></a>
+		</th>
+		<th>
+			<a href='mainPage.html'><img src="images/44-crop-u5812.png" width="80" height="40" /></a>
+		</th>
+		<th>
+			<a href='hotPlace.html'><img src="images/zz-crop-u5808.png" width="40" height="40" /></a>
+		</th>
+	</tr>
+</table>
+
+<br>
+
+<div class="mjtop">
+	<div class="option1">
+		<a href='myPage.html'>MY INFO</a>
+	</div>
+	<div class="option2">
+		<a style="color:#00f2ee" href='myPrefer.html'>MY LIKE</a>
+	</div>
+	<div class="option3">
+		<a href='myFriend.html'>MY FRIENDS</a>
+	</div>
+</div>
+
+
+
+<br>
+<div id="div" align= "center"></div>
+
+</body>
+</html>

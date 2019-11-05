@@ -1,0 +1,160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="generator" content="2017.1.0.379" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.css' rel='stylesheet' />
+
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.css' rel='stylesheet' />
+    <!-- js -->
+
+    <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.3.0/mapbox-gl-geocoder.min.js'></script>
+
+    <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.3.0/mapbox-gl-geocoder.css'
+        type='text/css' />
+
+    <style src="https://api.mapbox.com/styles/v1/mapbox/dark-v9.html?fresh=true&title=true&access_token=pk.eyJ1Ijoic3VhbWoiLCJhIjoiY2ptc203cWl0MGM1dDNwbnVwemdjZTFnbyJ9.v4QFpeaIi88xAl73QkEBUg#0.0/0.000000/0.000000/0"></style>
+
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+
+    <script src="http://code.jquery.com/jquery-migrate-1.1.0.min.js"></script>
+
+    <!--  <script src="jquery-3.3.1.js"></script>-->
+
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #map {
+            position: relative;
+            height: 400px;
+            width: auto;
+        }
+
+        pre.ui-distance {
+            position: relative;
+            bottom: 10px;
+            left: 20%;
+            /* 	padding:5px 10px;
+	 background:rgba(0,0,0,0);
+  	color:#ff5;
+ 	 border-radius:3px; */
+            font-size: 11px;
+            line-height: 18px;
+            background: grey;
+            border: 0 none;
+            font: bold 12px Arial, Helvetica, Sans-serif;
+            color: #777;
+            width: 180px;
+            padding: 6px 15px 6px 15px;
+            -webkit-border-radius: 20px;
+            -moz-border-radius: 20px;
+            border-radius: 20px;
+        }
+
+        .geocoder {
+            position: absolute;
+            z-index: 1;
+            width: 50%;
+            left: 50%;
+            margin-left: -25%;
+            top: 20px;
+        }
+
+        .mapboxgl-ctrl-geocoder {
+            min-width: 100%;
+        }
+        
+        .crop {
+  			width: auto;
+  			height: auto;
+  			overflow: hidden;
+		}
+		
+		.crop img {
+  			width: 100%;
+		}
+    </style>
+
+    <title>mainPage</title>
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="css.css" />
+    <link rel="stylesheet" type="text/css" href="css/site_global.css?crc=444006867" />
+    <link rel="stylesheet" type="text/css" href="css/master_full.css?crc=94902987" />
+    <link rel="stylesheet" type="text/css" href="css/_.css?crc=66686160" id="pagesheet" />
+
+
+</head>
+
+<body>
+
+	<script type="text/javascript" src="middlePage.js"></script>
+
+    <div id='map'></div>
+
+    <div class="box1">
+
+        <table>
+            <tr>
+                <th><a href='myPage.html'><img src="images/profile.png" width="40" height="40" /></a></th>
+                <th><a href='mainPage.html'><img src="images/44-crop-u5812.png" width="80" height="40" /></a></th>
+                <th><a href='hotPlace.html'><img src="images/zz-crop-u5808.png" width="40" height="40" /></a></th>
+            </tr>
+        </table>
+    </div>
+    <button class="fix00" id="subway" style="position: absolute; top: 50px;">지하철</button>
+    <button class="fix00" id="stationBtn" style="position: absolute; top: 80px">test</button>
+    <div id="selectStation">
+        
+
+    </div>
+
+    <br>
+    <br>
+
+    <br>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div style="position: relative; color: #777; width: 180px; background: #444;" id='geocoder' class='geocoder'></div>
+    
+    <table>
+        <tr>
+            <th><button id="category" value="food" style="color: skyblue; background: transparent; border: 1px solid skyblue; border-radius: 25px;">음식</button></th>
+            <th><button id="category" value="sights" style="color: skyblue; background: transparent; border: 1px solid skyblue ; border-radius: 25px;">관광지</button></th>
+            <th><button id="category" value="culture" style="color: skyblue; background: transparent; border: 1px solid skyblue ; border-radius: 25px;">문화시설</button></th>
+            <th><button id="category" value="festival" style="color: skyblue; background: transparent; border: 1px solid skyblue ; border-radius: 25px;",m>축제/공연</button></th>
+        </tr>
+    </table>
+    
+    <!-- <table>
+        <tr>
+            <th><a href='middlePointFood.html'><img src="images/food2.png" width="40" height="40" /></a></th>
+            <th><a href='middlePointCafe.html'><img src="images/cafeicon1.png" width="40" height="40" /></a></th>
+            <th><a href='middlePointCulture.html'><img src="images/cultureicon.png" width="40" height="40" /></a></th>
+        </tr>
+    </table> -->
+    
+    <!-- 핫플레이스 -->
+    <div id="div"></div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+.button {
+    background: rgb(67,220,238);
+background: linear-gradient(45deg, rgba(67,220,238,1) 0%, rgba(112,163,240,1) 100%);
+
+     display:inline-block;
+     padding:0.3em 1.2em;
+     margin:0 0.3em 0.3em 0;
+     border-radius:2em;
+     box-sizing: border-box;
+     text-decoration:none;
+     font-family:'Roboto',sans-serif;
+     font-weight:300;
+     color:#FFFFFF;
+     text-align:center;
+     transition: all 0.2s;
+
+}
+.button2 {
+    background:   opacity: 0.5;
+
+}
+body {
+    background-color:#343332;
+}
+.center {
+    margin: auto;
+}
+.example{
+    margin: auto;
+}

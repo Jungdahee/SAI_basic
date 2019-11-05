@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<!--suppress ALL -->
+<html class="nojs html css_verticalspacer" lang="ko-KR">
+<head>
+
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
+    <meta name="generator" content="2017.1.0.379"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <script type="text/javascript">
+   // Update the 'nojs'/'js' class on the html node
+document.documentElement.className = document.documentElement.className.replace(/\bnojs\b/g, 'js');
+
+// Check that all required assets are uploaded and up-to-date
+if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required":["museutils.js", "museconfig.js", "jquery.musepolyfill.bgsize.js", "jquery.watch.js", "require.js", "_.css"], "outOfDate":[]};
+</script>
+
+    <title>stationInfoTime</title>
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="css.css"/>
+    <link rel="stylesheet" type="text/css" href="css/site_global.css?crc=444006867"/>
+    <link rel="stylesheet" type="text/css" href="css/master_full.css?crc=94902987"/>
+    <link rel="stylesheet" type="text/css" href="css/_.css?crc=66686160" id="pagesheet"/>
+</head>
+<body>
+<style>
+.station{font-color:"#ffffff";}
+</style>
+<script>
+    $(document).ready(function() {
+    alert("에이잭스 진입 성공");
+    $.ajax({
+       url : "./LoadLastSubPath.do",
+       type : "post",
+       dataType : "json",
+       success : function(data) {
+    	   alert(JSON.stringify(data["10"]["shtTravelTm"]));
+          $("#shTime").text(data["10"]["shtTravelTm"]);//최소시간
+          //$("#transSta").text(data["10"]["0"]["stationName"]);//환승역
+          $("#startSta").text(data["10"]["0"]["stationName"]);//시작역
+          $("#desSta").text(data["10"][Object.keys(data["10"]).length-3]["stationName"]);//도착역 */
+
+
+          var lineTmp=data["10"]["0"]["subwayName"];
+
+          alert("lineTmp:  " + lineTmp );
+        //  alert("data["10"]["0"]["subwayName"]" + data["10"]["0"]["subwayName"]);
+          alert(Object.keys(data["10"]).length-3 );
+
+          for(var i = 1; i < Object.keys(data["10"]).length-3; i++ ){
+        	  if( lineTmp != data["10"][i]["subwayName"])
+        	  {
+        		  lineTmp = data["10"][i]["subwayName"];
+        		  alert("br");
+        		  $("#transSta").text(data["10"]["i"]["stationName"]);//환승역
+        		}
+
+          }
+          if(lineTmp == data["10"]["0"]["subwayName"]){
+        	  $("#transSta").html("<i>환승없음</i>");//환승역
+          }
+          alert("lineTmp : last :: " + lineTmp);
+
+       }
+    })
+ });
+</script>
+
+<table>
+    <tr>
+        <th>
+            <a href='myPage.html'><img src="images/profile.png" width="40" height="40" /></a>
+        </th>
+        <th>
+            <a href='mainPage.html'><img src="images/44-crop-u5812.png" width="80" height="40" /></a>
+        </th>
+        <th>
+            <a href='hotPlace.htsml'><img src="images/zz-crop-u5808.png" width="40" height="40" /></a>
+        </th>
+    </tr>
+</table>
+
+<br>
+
+<center>
+   <a style="color:#00f2ee" href='shtTimePath.html'>최단시간</a>
+        <a href='minTransPath.html'>최소환승</a>
+        
+<div style="white-space:nowrap; margin-left:20px">
+
+    <h5 style="color:#00f2ee;  left:50px" id="shTime">19</h5>
+    <h2 styl="color:white;display:inline">Time(min)</h2>
+    <h2 style="color:white;display:inline" id="transSta">종로3가</h2>
+
+
+</div>
+
+<br>
+<br>
+ <div class="circle1"></div>
+<div class="box"></div>
+<div class="circle2"></div>
+
+
+<div class ="startStation" >
+
+    <h5 id="startSta" >청량리</h5>
+    <br>
+    <br>
+    <br>
+    <h1 id="shTime"  >종로3가</h1>
+</div>
+
+
+
+
+<div class="destination">
+
+    <h5 id="desSta" >교대</h5>
+</div>
+
+
+<br>
+
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--suppress ALL -->
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="generator" content="2017.1.0.379" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script type="text/javascript">
+	// Update the 'nojs'/'js' class on the html node
+	document.documentElement.className = document.documentElement.className.replace(/\bnojs\b/g, 'js');
+
+	// Check that all required assets are uploaded and up-to-date
+	if (typeof Muse == "undefined")
+		window.Muse = {};
+	window.Muse.assets = {
+		"required" : [ "museutils.js", "museconfig.js",
+				"jquery.musepolyfill.bgsize.js", "jquery.watch.js",
+				"require.js", "_.css" ],
+		"outOfDate" : []
+	};
+</script>
+
+    <title>SAI</title>
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="css.css"/>
+    <link rel="stylesheet" type="text/css" href="css/site_global.css?crc=444006867" />
+    <link rel="stylesheet" type="text/css" href="css/master_full.css?crc=94902987" />
+    <link rel="stylesheet" type="text/css" href="css/_.css?crc=66686160" id="pagesheet" />
+
+    <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+</head>
+<body>
+<div class="fix01">
+    <br>
+    <img src="images/logo.png" width="70px" height="70px"/>
+    <p style="font-family: Sans-Serif; font-size:15px;">"너와 나의 사이, 우리의 사이"</p>
+    <br>
+    <br>
+    <br>
+
+    <div class="fix0_1">
+        <form id="search3" class="search-input" action="LoginMember.do" method="POST">
+            <br>
+            <input type="text" name="memberId" placeholder="ID" id="search2">
+            <br><br>
+            <input type="text" name="memberPw" placeholder="PASSWORD" id="search2"> <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <input class="but" type="submit" value="사이로 로그인"></input>
+        </form>
+    </div>
+
+    <div class="fix02">
+        <br><br><br><br>
+        <input type="button" class="but" onclick="javascript:loginWithKakao()" value="카카오로 로그인"></input>
+        <script type='text/javascript'>
+		// 사용할 앱의 JavaScript 키를 설정해 주세요.
+		Kakao.init('3caca4c28bd003ac96a01e93c5b2d58e');
+		// 카카오 로그인 버튼을 생성합니다.
+		function loginWithKakao(){
+		Kakao.Auth.login({
+			success : function(authObj) {
+				alert("로그인 성공!");
+				location.replace("mainPage.html");
+			},
+			fail : function(err) {
+				alert("로그인 실패!다시 시도해주세요");
+			}
+		});
+	};
+	</script>
+    </div>
+    <div class="fix02">
+    <br><br><br><br><br>
+
+        <a href="stationInfoTime.html">아이디/비밀번호 찾기</a>
+        <a href="joinMember.html">회원가입</a>
+        <br>
+    </div>
+</div>
+</body>
+</html>
+
