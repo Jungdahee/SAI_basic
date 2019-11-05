@@ -100,7 +100,7 @@ public class ChooseLastSub {
 		//정렬 후 가장 짧은 시간 선택
 		lastSub = (String)result.get(total[0]);
 		System.out.println(lastSub);
-		System.out.println("理�醫� 異�泥���: " + result.get(total[0]));
+		System.out.println("ㄱㄴㄷㄹ: " + result.get(total[0]));
 		
 		//중간지점 반환(String)
 		return lastSub;
