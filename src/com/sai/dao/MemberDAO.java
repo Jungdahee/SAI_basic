@@ -22,7 +22,7 @@ public class MemberDAO {
       try {
          Class.forName("com.mysql.jdbc.Driver");
          System.out.println("\n ***MemberDAO ---Class.forName(\"com.mysql.jdbc.Driver\"); 에러 없음 ");
-         conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/hanium_prac?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC", "root", "tndkmj89!!");   
+         conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/hanium_prac?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC", "root", "qkqh3635^^");   
 
       }catch(Exception e) {
          e.printStackTrace();
@@ -36,7 +36,7 @@ public class MemberDAO {
 
       //DTO(vo) 생성
       MemberVO vo = new MemberVO();
-      String sql = "select memberId, memberPw, memberName, memberPhone, memberStation from hanium_prac.member where memberId = ? and memberPw = ?";
+      String sql = "select memberId, memberPw, memberName, memberPhone, memberStation from members where memberId = ? and memberPw = ?";
 
       PreparedStatement pstmt = null;
       ResultSet rs= null;
@@ -71,7 +71,7 @@ public class MemberDAO {
    }
 
    public void join(String memberPhoto, String memberId, String memberPw, String memberName, String memberPhone, String memberStation) {
-      String sql = "insert into member values(?,?,?,?,?,?)";
+      String sql = "insert into members values(?,?,?,?,?,?)";
 
       PreparedStatement pstmt = null;
 
@@ -93,7 +93,7 @@ public class MemberDAO {
    }
 
    public JSONObject showMyInfo(String memberId) {
-      String sql = "select memberPhoto, memberId, memberPw, memberName, memberStation, memberPhone from member where memberId = ?";
+      String sql = "select memberPhoto, memberId, memberPw, memberName, memberStation, memberPhone from members where memberId = ?";
 
       JSONObject result = new JSONObject();
       PreparedStatement pstmt = null;
@@ -122,7 +122,7 @@ public class MemberDAO {
    }
 
    public void modifyInfo(String memberId, String memberPw, String memberName, String memberPhone, String memberStation) {
-      String sql = "update member set memberPw = ?, memberName = ?, memberPhone = ?, memberStation = ? where memberId = ?";
+      String sql = "update members set memberPw = ?, memberName = ?, memberPhone = ?, memberStation = ? where memberId = ?";
 
       PreparedStatement pstmt = null;
 
@@ -215,7 +215,7 @@ public class MemberDAO {
    }
 
    public JSONObject searchFriendInfo(String memberId) {
-      String sql = "select memberId, memberName, memberStation from hanium_prac.member where memberId = ?";
+      String sql = "select memberId, memberName, memberStation from members where memberId = ?";
 
       JSONObject json = new JSONObject();
       PreparedStatement pstmt = null;
@@ -278,7 +278,7 @@ public class MemberDAO {
    }
 
    public boolean checkId(String checkId) {
-      String sql = "select count(memberId) from member where memberId = ?";
+      String sql = "select count(memberId) from members where memberId = ?";
 
       System.out.println("checkId 吏꾩엯 �꽦怨�");
 
