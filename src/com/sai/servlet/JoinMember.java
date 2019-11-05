@@ -25,7 +25,7 @@ public class JoinMember implements Action {
 		
 		new MemberDAO().join(memberPhoto, memberId, memberPw, memberName, memberPhone, memberStation);
 		
-		System.out.println("가입 완료");
+		System.out.println("가입 완료되었습니다.");
 
 		return "index.html";
 	}
