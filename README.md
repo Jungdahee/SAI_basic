@@ -1,4 +1,4 @@
-# [한이음2018 공모전] 빅데이터를 활용한 약속 장소 및 주변 힙플레이스 추천 
+# [한이음2018 공모전] 지하철 기반 최적의 약속 장소 및 주변 힙플레이스 추천 서비스
 
 Recommendation of appointment location using big data and recommendation of surrounding hip place
 
@@ -36,7 +36,7 @@ sai (너와 나의 사이, 우리의 사이)
 
 <img width="915" alt="Screen Shot 2019-11-16 at 5 11 27 PM" src="https://user-images.githubusercontent.com/33794732/68990265-8f43f900-0894-11ea-82a8-622af98b8d57.png">
 
-### 작품의 개발배병 및 필요성
+### 작품의 개발배경 및 필요성
 
 기존에 있는 서비스의 경우 좌표상의 중간 지점을 알려주기 때문에 실질적으로 만남이 불가능한 장소(산 또는 강 한 가운데)를 추천해주는 경우가 많음. 따라서 실질적인 만남이 이루어질 수 있는 장소와 인근 힙플레이스 정보를 제공바등ㄹ 수 있다면 편리할 것으로 전망함.
 
