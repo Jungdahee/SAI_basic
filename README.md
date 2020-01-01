@@ -14,7 +14,7 @@ Recommendation of appointment location using big data and recommendation of surr
 
 ### 팀 정보
 
-- IOI(IT + Occure + Influence: 아이티에 영향력을 일으킨다.) 
+IOI(IT + Occure + Influence: 아이티에 영향력을 일으킨다.) 
 - 정다희: 프로젝트 관리, 서버 관리, 백엔드 구현, 데이터베이스 구축
 - 이미지: MapboxAPI 활용, 프론트엔드 구현
 - 이유리: 프론트엔드, API 및 라이브러리 탐색
