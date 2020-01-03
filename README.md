@@ -4,7 +4,7 @@ Recommendation of appointment location using big data and recommendation of surr
 
 ### 프로젝트 기간 
 
-2018.04.24 ~ 2018.11.30
+2018.04.24 ~ 2018.11.30(7개월)
 
 ### 개발환경
 
